@@ -1,39 +1,16 @@
-import { Component } from "react";
-class Counter extends Component {
-  state = { count: 0, animate: false };
-
-  triggerAnimation = () => {
-    this.setState({ animate: true });
-    setTimeout(() => this.setState({ animate: false }), 300);
-  };
-
-  onIncrement = () => {
-    this.setState(
-      prevState => ({ count: prevState.count + 1 }),
-      this.triggerAnimation
-    );
-  };
-
-  onDecrement = () => {
-    this.setState(
-      prevState => ({ count: prevState.count - 1 }),
-      this.triggerAnimation
-    );
-  };
-
-  render() {
-    const { count, animate } = this.state;
-    return (
-      <div className="counter-container">
-        <h1 className="counter-title">Counter</h1>
-        <div className={`counter-value${animate ? ' counter-value-animate' : ''}`}>{count}</div>
-        <div className="counter-buttons">
-          <button className="counter-btn" onClick={this.onIncrement}>Increment</button>
-          <button className="counter-btn" onClick={this.onDecrement}>Decrement</button>
-        </div>
+const Userdetails = ({ fname, age, img, onDelete }) => {
+  return (
+    <div className="user-card">
+      <img src={img} alt={fname} />
+      <div className="user-info">
+        <h2>{fname}</h2>
+        <p>Age: {age}</p>
       </div>
-    );
-  }
-}
+      <button className="delete-btn" onClick={onDelete} title="Delete user">
+        🗑️
+      </button>
+    </div>
+  );
+};
 
-export default Counter;
+export default Userdetails;
