@@ -1,84 +1,102 @@
-/* App.css - Beautiful Counter Styles */
-
 body {
-  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
   font-family: 'Segoe UI', Arial, sans-serif;
-  min-height: 100vh;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
   margin: 0;
+  padding: 0;
+  color: #f1f1f1;
 }
 
-.counter-container {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(60, 72, 100, 0.15);
-  max-width: 340px;
-  margin: 60px auto;
-  padding: 40px 30px;
+.user-list-container {
+  max-width: 380px;
+  margin: 40px auto;
+  background: rgba(34, 36, 38, 0.98);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+  padding: 22px 14px;
+}
+
+.user-list-container h1 {
   text-align: center;
-  transition: box-shadow 0.3s;
-}
-
-.counter-container:hover {
-  box-shadow: 0 12px 40px rgba(60, 72, 100, 0.22);
-}
-
-.counter-title {
-  font-size: 2rem;
-  color: #6366f1;
+  color: #f9d923;
   margin-bottom: 18px;
   letter-spacing: 1px;
+  font-size: 1.3rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-.counter-value {
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: #1e293b;
-  margin: 24px 0;
-  transition: color 0.2s, transform 0.2s;
-}
-
-.counter-value-animate {
-  animation: pop 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.25);
-    color: #6366f1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.counter-buttons {
+.user-card {
   display: flex;
-  justify-content: center;
-  gap: 18px;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid #393e46;
+  padding: 10px 0;
+  background: linear-gradient(90deg, #232526 0%, #393e46 100%);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
 }
 
-.counter-btn {
-  background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
-  color: #fff;
+.user-card:last-child {
+  border-bottom: none;
+}
+
+.user-card img {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border: 2px solid #f9d923;
+  background: #232526;
+  box-shadow: 0 0 0 2px #393e4633;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-info h2 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  color: #f1f1f1;
+  text-shadow: 0 1px 4px #23252699;
+}
+
+.user-info p {
+  margin: 0;
+  color: #bdbdbd;
+  font-size: 0.9rem;
+  text-shadow: 0 1px 4px #23252699;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  border: 1.2px solid #f9d923;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+  background: #232526;
+  color: #f1f1f1;
+  transition: border 0.2s;
+}
+.search-bar:focus {
+  border: 2px solid #f9d923;
+}
+
+.delete-btn {
+  background: none;
   border: none;
-  border-radius: 50px;
-  padding: 12px 28px;
+  color: #f9d923;
   font-size: 1.2rem;
-  font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
-  transition: background 0.2s, transform 0.1s;
+  margin-left: auto;
+  padding: 4px 7px;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
 }
-
-.counter-btn:active {
-  background: linear-gradient(90deg, #818cf8 0%, #6366f1 100%);
-  transform: scale(0.97);
-}
-
-.counter-btn:focus {
-  outline: 2px solid #6366f1;
-  outline-offset: 2px;
+.delete-btn:hover {
+  background: #393e46;
+  color: #ff4c29;
 }
